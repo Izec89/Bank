@@ -1,13 +1,29 @@
 package com.izec.bank;
 
+import com.izec.bank.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class BankApplication {
+public class BankApplication { //implements CommandLineRunner {
+
+    @Autowired
+    private UserService userService;
 
     public static void main(String[] args) {
         SpringApplication.run(BankApplication.class, args);
     }
+
+//    @Override
+//    public void run(String... args) throws Exception {
+//        userService.addUser(new User("Izec", "password",
+//                true, "some@mail.ru", "12345", new HashSet<>()));
+//
+//        userService.getAll().forEach(s -> {
+//            System.out.println(s.toString());
+//        });
+//    }
+
 
 }
